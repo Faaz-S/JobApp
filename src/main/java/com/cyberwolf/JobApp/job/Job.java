@@ -1,5 +1,6 @@
 package com.cyberwolf.JobApp.job;
 
+import com.cyberwolf.JobApp.company.Company;
 import jakarta.persistence.*;
 
 //@Entity will tell the compiler that this is the class that is to be mapped to a table.
@@ -15,9 +16,12 @@ public class Job {
     private String maxSalary;
     private String location;
 
+    @ManyToOne
+    private Company company;
     //All JPA entities have to have a default constructor
     public Job(){
     }
+
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
@@ -26,6 +30,13 @@ public class Job {
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+    }
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Long getId() {

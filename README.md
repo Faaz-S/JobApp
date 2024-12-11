@@ -85,7 +85,10 @@ PROJECT PHASE 2
 JPA [Java Persistence API] - allows us to map Java objects to tables in a relational database.
 - Used JPA to handle jobs and modified all the methods in the JobImplementation to use JobRepository
 interface which extends the JpaRepository interface.
+- Every class managed by Jpa has to be declared as @Entity
 - Used H2 Database Engine to test the database
 - Add companies and reviews functionality
+
+Finished till 6:10: [start with Spring Boot Actuator]
 
 
